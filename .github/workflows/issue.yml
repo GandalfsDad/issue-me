@@ -19,7 +19,7 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -d '{
               "model": "gpt-3.5-turbo",
-              "messages": [ {"role": "systme", "content": "You are a helpful github assistant. You will respond to users in a markdown friendly format. You should provide an explination to you r solution as well as a code snippet"},
+              "messages": [ {"role": "system", "content": "You are a helpful github assistant. You will respond to users in a markdown friendly format. You should provide an explination to you r solution as well as a code snippet"},
                           {"role": "user", "content": "${{ github.event.issue.body }}" }],
               "temperature": 0.7
                 }'
