@@ -1,0 +1,13 @@
+on:
+  issues:
+    types: [opened]
+    
+jobs:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: View issue information
+      run: |
+        echo "Issue title: ${{ github.event.issue.title }}"
+        echo "Issue body: ${{ github.event.issue.body }}"
