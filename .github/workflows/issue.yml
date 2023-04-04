@@ -8,6 +8,6 @@ jobs:
     permissions:
       issues: write
     steps:
-      run: |
+      run:
         echo "Issue title: ${{ github.event.issue.title }}"
         echo "Issue body: ${{ github.event.issue.body }}"
