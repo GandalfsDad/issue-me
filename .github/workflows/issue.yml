@@ -16,7 +16,7 @@ jobs:
         run: |
           curl https://api.openai.com/v1/chat/completions \
             -H "Content-Type: application/json" \
-            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -d '{
               "model": "gpt-3.5-turbo",
               "messages": [ {"role": "systme", "content": "You are a helpful github assistant. You will respond to users in a markdown friendly format. You should provide an explination to you r solution as well as a code snippet"},
