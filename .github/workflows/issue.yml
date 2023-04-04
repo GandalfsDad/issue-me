@@ -8,6 +8,13 @@ jobs:
     permissions:
       issues: write
     steps:
-      - run: |
+      - name: display
+        run: |
           echo "Issue title: ${{ github.event.issue.title }}"
-          echo "Issue body: ${{ github.event.issue.body }}"
+          echo "Issue body: ${{ github.event.issue.body }}
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Wow That's great
